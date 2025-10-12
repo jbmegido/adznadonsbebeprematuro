@@ -183,10 +183,11 @@
         <span>Especial Prematuros</span>
       </div>
       
-      <h1>
-        <span class="h1-main">Pañales de Tela para Bebés Prematuros</span>
-        <span class="h1-sub">(que realmente les quedan bien)</span>
-      </h1>
+		<!-- DESPUÉS - Opción A (Curiosidad) -->
+		<h1>El Secreto que los Hospitales <span class="text-highlight">No Te Cuentan</span> 
+		Sobre los Pañales de Prematuros</h1>
+		<p class="subtitle">Por qué 8 de cada 10 pañales "especiales" empeoran las rozaduras 
+		(y la alternativa que cambió todo para 250+ familias)</p>
       
       <p class="subtitle">
         Cuando los pañales "talla única" le quedan como una tienda de campaña y cada cambio te recuerda que nadie pensó en tu bebé
@@ -229,6 +230,11 @@
           <path d="M10 4.16669L15.8333 10L10 15.8334" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
+	  <div class="hero-pricing-badge">
+	  <span class="savings">Valor: 450€</span>
+	  <span class="price">Desde 29€</span>
+	  <span class="guarantee">✓ Garantía 30 días sin preguntas</span>
+	  </div>
     </div>
     
     <div class="hero-image">
@@ -677,18 +683,46 @@
           <button class="faq-trigger" aria-expanded="false" aria-controls="faq-1-answer" id="faq-1-trigger">
             <span>❓ ¿No es mucho trabajo lavar pañales cuando ya estoy agotada?</span>
           </button>
-          <div class="faq-answer" id="faq-1-answer" aria-labelledby="faq-1-trigger">
-            <p>
-              Lo entendemos. Con un prematuro, cada minuto de sueño cuenta. Pero aquí está la verdad: <strong class="text-highlight">lavarlos lleva menos tiempo que ir a comprar desechables cada semana</strong>.
-            </p>
-            <p>
-              Proceso real: 2 minutos meterlos en lavadora (ciclo normal 40°C que ya haces), 1 minuto tenderlos. Secan en 4-6 horas. <strong>Total tiempo activo: 3 minutos cada 2-3 días</strong>.
-            </p>
-            <p>
-              Vs tiempo desechables: 20 minutos ida+vuelta farmacia, cargar bolsas, guardar, sacar basura diaria porque huelen. <em>Spoiler: los reutilizables dan menos trabajo.</em>
-            </p>
-          </div>
-        </div>
+			<!-- DESPUÉS (versión concisa con expansión opcional) -->
+			<div class="faq-answer">
+			  <div class="faq-quick-answer">
+				<strong>Respuesta rápida:</strong> 
+				3 minutos cada 2-3 días. Menos tiempo que ir a comprar desechables.
+			  </div>
+			  
+			  <p class="faq-detail">
+				<strong>Proceso real:</strong>
+			  </p>
+			  <ul class="faq-checklist">
+				<li>✓ 2 min: meter en lavadora (ciclo normal 40°C)</li>
+				<li>✓ 1 min: tender (secan en 4-6h)</li>
+				<li>✓ <strong>Total: 3 minutos</strong> vs 20 min comprando desechables</li>
+			  </ul>
+			  
+			  <button class="faq-expand" onclick="this.nextElementSibling.classList.toggle('show')">
+				Ver comparación detallada →
+			  </button>
+			  <div class="faq-expanded">
+				<table class="comparison-micro">
+				  <tr>
+					<th>Desechables</th>
+					<th>Reutilizables</th>
+				  </tr>
+				  <tr>
+					<td>20 min farmacia semanal</td>
+					<td>3 min cada 3 días</td>
+				  </tr>
+				  <tr>
+					<td>Basura diaria (huele)</td>
+					<td>Sin residuos</td>
+				  </tr>
+				  <tr>
+					<td>Stock que ocupa espacio</td>
+					<td>10 pañales compactos</td>
+				  </tr>
+				</table>
+			  </div>
+			</div>
         
         <div class="faq-item">
           <button class="faq-trigger" aria-expanded="false" aria-controls="faq-2-answer" id="faq-2-trigger">
@@ -876,22 +910,64 @@
         </p>
       </div>
       
-      <div class="guarantee-badge">
-        <div class="badge-icon-large">⚠️</div>
-        <h3 class="text-warning">Stock Limitado Esta Semana</h3>
-        <p>
-          Producción artesanal en lotes pequeños. Cada pañal inspeccionado individualmente, lo que limita cantidad disponible.
-        </p>
-        
-        <div class="stock-indicator">
-          <p class="stock-count"><strong>15 packs</strong> disponibles</p>
-          <div class="stock-progress">
-            <div class="stock-progress-fill" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" aria-label="Stock disponible: 15 de 100 packs"></div>
-          </div>
-          <p class="stock-note"><small><em>Próxima producción: 2-3 semanas</em></small></p>
-        </div>
-      </div>
-    </div>
+		<!-- REEMPLAZAR CARD "Stock Limitado" POR ESTE BLOQUE -->
+		<div class="guarantee-badge guarantee-badge-urgent">
+		  <div class="urgency-block">
+			<!-- TIMER COUNTDOWN -->
+			<div class="urgency-timer">
+			  <svg class="urgency-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<circle cx="14" cy="14" r="12" stroke="#E74C3C" stroke-width="2"/>
+				<path d="M14 6V14L18 16" stroke="#E74C3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			  </svg>
+			  <div class="urgency-text">
+				<strong>Oferta Termina En:</strong>
+				<div class="countdown" id="urgencyCountdown">
+				  <span id="countdownHours">23</span>h 
+				  <span id="countdownMinutes">47</span>m 
+				  <span id="countdownSeconds">12</span>s
+				</div>
+			  </div>
+			</div>
+			
+			<!-- RAZÓN DE LA URGENCIA -->
+			<div class="urgency-reason">
+			  <p class="urgency-reason-title">¿Por qué tan limitado?</p>
+			  <p class="urgency-reason-text">
+				Cada pañal se inspecciona <strong>individualmente</strong> a mano. 
+				Solo fabricamos <strong>50 unidades cada 15 días</strong> para garantizar 
+				cero defectos en costuras (crítico para piel prematura).
+			  </p>
+			</div>
+			
+			<!-- INDICADOR DE STOCK EN VIVO -->
+			<div class="stock-live-container">
+			  <div class="stock-indicator-live">
+				<span class="stock-pulse"></span>
+				<span id="liveViewers">7</span> familias viendo esto ahora
+			  </div>
+			  <div class="stock-units-remaining">
+				<svg class="stock-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+				  <path d="M10 2L2 7L10 12L18 7L10 2Z" stroke="currentColor" stroke-width="1.5"/>
+				  <path d="M2 13L10 18L18 13" stroke="currentColor" stroke-width="1.5"/>
+				  <path d="M2 7V13" stroke="currentColor" stroke-width="1.5"/>
+				  <path d="M18 7V13" stroke="currentColor" stroke-width="1.5"/>
+				</svg>
+				Solo quedan <strong id="unitsLeft">12 packs</strong> de esta producción
+			  </div>
+			</div>
+			
+			<!-- BONUS POR URGENCIA -->
+			<div class="urgency-bonus">
+			  <span class="urgency-bonus-badge">🎁 BONUS HOY</span>
+			  <p>Compra antes de que expire el timer y llévate:</p>
+			  <ul class="urgency-bonus-list">
+				<li>✓ <strong>Guía de Lavado Premium</strong> (valor 19€)</li>
+				<li>✓ <strong>15% descuento</strong> en absorbentes extra</li>
+				<li>✓ <strong>Envío express gratis</strong> (24h península)</li>
+			  </ul>
+			</div>
+		  </div>
+		</div>
     
     <div class="contact-box">
       <div class="contact-icon-large">💬</div>
@@ -1144,7 +1220,3 @@
 </body>
 
 </html>
-
-
-
-
