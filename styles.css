@@ -1590,7 +1590,7 @@ width: 100%;
 .guarantee-content {
 padding: 48px 20px;
 background: var(--bg);
-border-top: 4px solid var(--secondary);
+border-top: none;
 }
 .guarantee-content h2 {
 font-size: 28px;
@@ -2791,3 +2791,4 @@ FIN DEL ARCHIVO styles.css
   border-bottom: none !important;
   padding-bottom: 48px;
 }
+
