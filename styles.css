@@ -96,11 +96,55 @@ p {
   min-height: 52px;
 }
 
-.btn-primary {
-  background: var(--primary);
+/* DESPUÉS - Jerarquía visual potente */
+.btn-primary-hero {
+  background: linear-gradient(135deg, #E8B4A8 0%, #D89A8A 100%);
+  box-shadow: 
+    0 8px 32px rgba(232, 180, 168, 0.5),
+    0 0 0 4px rgba(232, 180, 168, 0.2);
+  font-size: 20px;
+  padding: 20px 48px;
+  animation: pulse-hero 2.5s infinite;
+  position: relative;
+  z-index: 10;
+}
+
+@keyframes pulse-hero {
+  0%, 100% { 
+    box-shadow: 
+      0 8px 32px rgba(232, 180, 168, 0.5),
+      0 0 0 4px rgba(232, 180, 168, 0.2);
+  }
+  50% { 
+    box-shadow: 
+      0 12px 48px rgba(232, 180, 168, 0.7),
+      0 0 0 8px rgba(232, 180, 168, 0.3);
+  }
+}
+
+/* Hero: Precio visible inmediatamente */
+.hero-pricing-badge {
+  display: inline-block;
+  background: #FFF9F5;
+  border: 3px solid var(--success);
+  border-radius: 16px;
+  padding: 16px 24px;
+  margin-top: 24px;
+  font-size: 18px;
+  font-weight: 700;
   color: var(--text);
-  border: 2px solid var(--primary);
-  box-shadow: var(--shadow-soft);
+}
+
+.hero-pricing-badge .price {
+  font-size: 32px;
+  color: var(--success);
+  display: block;
+}
+
+.hero-pricing-badge .savings {
+  font-size: 14px;
+  color: var(--text-muted);
+  text-decoration: line-through;
 }
 
 .btn-primary:hover {
@@ -1612,6 +1656,277 @@ text-align: center;
 transition: all 0.35s ease-out;
 box-shadow: 0 4px 12px rgba(45, 52, 54, 0.05);
 }
+/* ============================================================================
+   URGENCY BLOCK - AÑADIR DESPUÉS DE .guarantee-badge
+   ========================================================================= */
+
+.guarantee-badge-urgent {
+  border: 3px solid #E74C3C !important;
+  background: linear-gradient(135deg, #FFF5F5 0%, #FFE8E8 100%);
+  box-shadow: 0 8px 32px rgba(231, 76, 60, 0.25);
+  animation: pulse-urgent-border 2s infinite;
+}
+
+@keyframes pulse-urgent-border {
+  0%, 100% { 
+    box-shadow: 0 8px 32px rgba(231, 76, 60, 0.25);
+    border-color: #E74C3C;
+  }
+  50% { 
+    box-shadow: 0 12px 48px rgba(231, 76, 60, 0.4);
+    border-color: #C0392B;
+  }
+}
+
+.urgency-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* COUNTDOWN TIMER */
+.urgency-timer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 2px dashed #E74C3C;
+}
+
+.urgency-icon {
+  flex-shrink: 0;
+  animation: tick-tock 1s infinite;
+}
+
+@keyframes tick-tock {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+
+.urgency-text {
+  flex: 1;
+}
+
+.urgency-text strong {
+  display: block;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.countdown {
+  font-size: 32px;
+  font-weight: 700;
+  color: #E74C3C;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 3px;
+  line-height: 1;
+}
+
+.countdown span {
+  display: inline-block;
+  min-width: 32px;
+  text-align: center;
+}
+
+/* RAZÓN DE URGENCIA */
+.urgency-reason {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.urgency-reason-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.urgency-reason-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* STOCK EN VIVO */
+.stock-live-container {
+  background: white;
+  border: 2px solid #E74C3C;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stock-indicator-live {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.stock-pulse {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #E74C3C;
+  border-radius: 50%;
+  position: relative;
+  animation: pulse-dot 1.5s infinite;
+}
+
+.stock-pulse::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: #E74C3C;
+  border-radius: 50%;
+  opacity: 0;
+  animation: pulse-ring 1.5s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { 
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.7;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes pulse-ring {
+  0% { 
+    opacity: 0.6;
+    transform: scale(0.8);
+  }
+  100% { 
+    opacity: 0;
+    transform: scale(1.8);
+  }
+}
+
+.stock-units-remaining {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: var(--text);
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.stock-icon {
+  color: #E74C3C;
+  flex-shrink: 0;
+}
+
+.stock-units-remaining strong {
+  color: #E74C3C;
+  font-weight: 700;
+}
+
+/* BONUS POR URGENCIA */
+.urgency-bonus {
+  background: linear-gradient(135deg, #FFF9E6 0%, #FFE5A3 100%);
+  border: 2px solid #F39C12;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.urgency-bonus-badge {
+  display: inline-block;
+  background: #F39C12;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.urgency-bonus p {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.urgency-bonus-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  list-style: none;
+  padding: 0;
+}
+
+.urgency-bonus-list li {
+  font-size: 13px;
+  color: var(--text);
+  padding-left: 0;
+}
+
+.urgency-bonus-list strong {
+  color: #E67E22;
+}
+
+/* RESPONSIVE TABLET */
+@media (min-width: 768px) {
+  .countdown {
+    font-size: 40px;
+  }
+  
+  .urgency-bonus-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .urgency-bonus-list li {
+    flex: 0 0 48%;
+  }
+}
+
+/* RESPONSIVE DESKTOP */
+@media (min-width: 1200px) {
+  .countdown {
+    font-size: 48px;
+  }
+  
+  .stock-live-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* ESTADO: COUNTDOWN EXPIRADO */
+.urgency-timer.expired {
+  opacity: 0.6;
+}
+
+.urgency-timer .expired-message {
+  color: #E74C3C;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  padding: 16px;
+  background: rgba(231, 76, 60, 0.1);
+  border-radius: 8px;
+}
+
 .guarantee-badge:hover {
 transform: translateY(-4px);
 box-shadow: 0 8px 20px rgba(45, 52, 54, 0.1);
@@ -2835,6 +3150,3 @@ FIN DEL ARCHIVO styles.css
   border-bottom: none !important;
   padding-bottom: 48px;
 }
-
-
-
