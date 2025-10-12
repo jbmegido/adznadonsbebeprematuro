@@ -62,7 +62,7 @@
     });
     
     if (CONFIG.DEBUG) {
-      console.log(`✅ Smooth scroll activado en ${links.length} links`);
+      console.log('✅ Smooth scroll activado en ${links.length} links');
     }
   }
   
@@ -155,7 +155,7 @@
     const faqItems = document.querySelectorAll('.faq-item');
     
     if (CONFIG.DEBUG) {
-      console.log(`🔍 FAQ items encontrados: ${faqItems.length}`);
+      console.log('🔍 FAQ items encontrados: ${faqItems.length}');
     }
     
     faqItems.forEach(item => {
@@ -188,7 +188,7 @@
         }
         
         if (CONFIG.DEBUG) {
-          console.log(`FAQ ${isActive ? 'cerrado' : 'abierto'}:`, this.textContent.trim());
+          console.log('FAQ ${isActive ? 'cerrado' : 'abierto'}:', this.textContent.trim());
         }
       });
       
@@ -202,7 +202,7 @@
     });
     
     if (CONFIG.DEBUG) {
-      console.log(`✅ FAQ accordion activado en ${faqItems.length} preguntas`);
+      console.log('✅ FAQ accordion activado en ${faqItems.length} preguntas');
     }
   }
   
@@ -300,7 +300,7 @@
     });
     
     if (CONFIG.DEBUG) {
-      console.log(`✅ Forms inicializados: ${forms.length}`);
+      console.log('✅ Forms inicializados: ${forms.length}');
     }
   }
   
@@ -368,9 +368,9 @@
     
     // Create message element
     const messageEl = document.createElement('div');
-    messageEl.className = `form-message form-message-${type}`;
+    messageEl.className = 'form-message form-message-${type}';
     messageEl.textContent = message;
-    messageEl.style.cssText = `
+    messageEl.style.cssText = '
       padding: 16px;
       margin-top: 16px;
       border-radius: 8px;
@@ -381,7 +381,7 @@
       color: ${type === 'success' ? '#155724' : '#721C24'};
       border: 1px solid ${type === 'success' ? '#C3E6CB' : '#F5C6CB'};
       animation: slideDown 0.3s ease-out;
-    `;
+    ';
     
     form.appendChild(messageEl);
     
@@ -500,7 +500,7 @@
     images.forEach(img => imageObserver.observe(img));
     
     if (CONFIG.DEBUG) {
-      console.log(`✅ Lazy loading fallback activado para ${images.length} imágenes`);
+      console.log('✅ Lazy loading fallback activado para ${images.length} imágenes');
     }
   }
   
@@ -570,7 +570,7 @@
     });
     
     if (CONFIG.DEBUG) {
-      console.log(`✅ Gallery lightbox activado en ${galleryImages.length} imágenes`);
+      console.log('✅ Gallery lightbox activado en ${galleryImages.length} imágenes');
     }
   }
   
@@ -578,7 +578,7 @@
     // Create lightbox overlay
     const overlay = document.createElement('div');
     overlay.className = 'lightbox-overlay';
-    overlay.style.cssText = `
+    overlay.style.cssText = '
       position: fixed;
       top: 0;
       left: 0;
@@ -592,26 +592,26 @@
       padding: 20px;
       cursor: zoom-out;
       animation: fadeIn 0.3s ease-out;
-    `;
+    ';
     
     // Create image
     const img = document.createElement('img');
     img.src = src;
     img.alt = alt;
-    img.style.cssText = `
+    img.style.cssText = '
       max-width: 90%;
       max-height: 90%;
       object-fit: contain;
       border-radius: 8px;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
       animation: zoomIn 0.3s ease-out;
-    `;
+    ';
     
     // Create close button
     const closeBtn = document.createElement('button');
     closeBtn.innerHTML = '&times;';
     closeBtn.setAttribute('aria-label', 'Cerrar lightbox');
-    closeBtn.style.cssText = `
+    closeBtn.style.cssText = '
       position: absolute;
       top: 20px;
       right: 20px;
@@ -625,7 +625,7 @@
       color: #333;
       cursor: pointer;
       transition: background 0.3s ease;
-    `;
+    ';
     
     closeBtn.addEventListener('mouseenter', () => {
       closeBtn.style.background = 'white';
@@ -705,7 +705,7 @@
     // Fix for mobile browsers (especially Safari)
     const setVH = () => {
       const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
+      document.documentElement.style.setProperty('--vh', '${vh}px');
     };
     
     setVH();
@@ -776,12 +776,12 @@ function initUrgencyCountdown() {
     // Si expiró el timer
     if (remaining <= 0) {
       if (timerContainer) {
-        timerContainer.innerHTML = `
+        timerContainer.innerHTML = '
           <div class="expired-message">
             ⏰ <strong>Oferta finalizada.</strong><br>
             Próxima producción disponible en 12 días.
           </div>
-        `;
+        ';
         timerContainer.classList.add('expired');
       }
       
@@ -981,3 +981,4 @@ document.head.appendChild(style);
   }
   
 })();
+
