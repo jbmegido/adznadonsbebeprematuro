@@ -160,11 +160,11 @@
     
     faqItems.forEach(item => {
       const trigger = item.querySelector('.faq-trigger');
-      const content = item.querySelector('.faq-content');
+      const answer = item.querySelector('.faq-answer'); // CAMBIADO: .faq-content → .faq-answer
       
-      if (!trigger || !content) {
+      if (!trigger || !answer) {
         if (CONFIG.DEBUG) {
-          console.warn('⚠️ FAQ item sin trigger o content:', item);
+          console.warn('⚠️ FAQ item sin trigger o answer:', item);
         }
         return;
       }
@@ -174,7 +174,7 @@
         
         // Toggle active state
         this.classList.toggle('active');
-        content.classList.toggle('active');
+        answer.classList.toggle('active');
         item.classList.toggle('active');
         
         // Update ARIA
@@ -182,9 +182,9 @@
         
         // Adjust max-height for smooth animation
         if (!isActive) {
-          content.style.maxHeight = content.scrollHeight + 'px';
+          answer.style.maxHeight = answer.scrollHeight + 'px';
         } else {
-          content.style.maxHeight = '0';
+          answer.style.maxHeight = '0';
         }
         
         if (CONFIG.DEBUG) {
