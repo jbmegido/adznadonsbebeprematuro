@@ -2663,4 +2663,75 @@ content-visibility: auto;
 /* ============================================================================
 FIN DEL ARCHIVO styles.css
 ========================================================================= */
+
 /*
+/* ============================================================================
+   FIX URGENTE - FAQ VISIBLE
+   Añadir al FINAL de styles.css
+   ========================================================================= */
+
+/* Asegurar que la sección FAQ sea visible */
+#faq,
+.faq-section {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  min-height: 400px;
+}
+
+/* Asegurar que el contenedor del FAQ sea visible */
+.faq-content {
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* Asegurar que la lista de preguntas sea visible */
+.faq-list {
+  display: flex !important;
+  visibility: visible !important;
+}
+
+/* Asegurar que cada item FAQ sea visible */
+.faq-item {
+  display: block !important;
+  visibility: visible !important;
+  margin-bottom: 16px;
+}
+
+/* Asegurar que los triggers (botones de pregunta) sean visibles */
+.faq-trigger {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* El contenido de las respuestas DEBE estar oculto por defecto */
+.faq-item .faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+
+/* Cuando se activa, mostrar el contenido */
+.faq-item .faq-content.active {
+  max-height: 3000px !important;
+  padding: 20px 28px !important;
+}
+
+/* Debug temporal - eliminar después de confirmar que funciona */
+.faq-section::before {
+  content: '🔍 SECCIÓN FAQ CARGADA';
+  display: block;
+  background: yellow;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: black;
+}
+
+/* Debug para cada pregunta */
+.faq-trigger::before {
+  content: '✓ ';
+  color: green;
+  font-weight: bold;
+}
