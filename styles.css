@@ -1776,27 +1776,71 @@ font-weight: 600;
 font-style: italic;
 margin-top: 16px;
 }
+/* MÓVIL - Botón ajustado */
 .btn-cta-final {
-background: linear-gradient(135deg, var(--primary) 0%, #E8A87C 100%);
-min-width: 100%;
-padding: 20px;
-font-size: 20px;
-margin-bottom: 20px;
-position: relative;
-overflow: hidden;
+  background: linear-gradient(135deg, var(--primary) 0%, #E8A87C 100%);
+  width: 100%;
+  padding: 16px 20px; /* Reducido padding vertical */
+  font-size: 16px; /* Reducido tamaño de fuente en móvil */
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  line-height: 1.3; /* Mejor espaciado del texto */
+  min-height: auto; /* Permitir altura flexible */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
+/* Texto del botón más legible */
+.btn-cta-final span {
+  display: block;
+  max-width: 100%;
+  text-align: center;
+}
+
+/* Flecha del botón */
+.btn-cta-final .btn-arrow-lg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+/* Efecto hover/before mantenido */
 .btn-cta-final::before {
-content: '';
-position: absolute;
-top: 0;
-left: -100%;
-width: 100%;
-height: 100%;
-background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-transition: left 0.5s;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
 }
 .btn-cta-final:hover::before {
-left: 100%;
+  left: 100%;
+}
+/* TABLET (768px+) - Botón más grande */
+@media (min-width: 768px) {
+  .btn-cta-final {
+    width: auto;
+    min-width: 400px;
+    padding: 20px 32px;
+    font-size: 20px;
+  }
+  
+  .btn-cta-final .btn-arrow-lg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* DESKTOP (1200px+) - Botón óptimo */
+@media (min-width: 1200px) {
+  .btn-cta-final {
+    min-width: 500px;
+    padding: 22px 56px;
+    font-size: 22px;
+  }
 }
 @keyframes pulse-cta {
 0%, 100% {
@@ -2791,4 +2835,5 @@ FIN DEL ARCHIVO styles.css
   border-bottom: none !important;
   padding-bottom: 48px;
 }
+
 
