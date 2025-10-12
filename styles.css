@@ -1782,7 +1782,7 @@ margin-top: 16px;
   width: 100%;
   padding: 16px 20px; /* Reducido padding vertical */
   font-size: 16px; /* Reducido tamaño de fuente en móvil */
-  margin-bottom: 20px;
+  margin: 0 auto 20px; /* Centrado horizontal */
   position: relative;
   overflow: hidden;
   line-height: 1.3; /* Mejor espaciado del texto */
@@ -2835,5 +2835,6 @@ FIN DEL ARCHIVO styles.css
   border-bottom: none !important;
   padding-bottom: 48px;
 }
+
 
 
