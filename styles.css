@@ -2775,3 +2775,19 @@ content-visibility: auto;
 /* ============================================================================
 FIN DEL ARCHIVO styles.css
 ========================================================================= */
+
+/* Fix: Eliminar línea negra al final del FAQ */
+.faq-section::after,
+.faq-wrapper::after,
+.faq-list::after {
+  display: none !important;
+}
+
+.faq-section {
+  border-bottom: none !important;
+}
+
+.faq-wrapper {
+  border-bottom: none !important;
+  padding-bottom: 48px;
+}
