@@ -151,61 +151,76 @@
   // 3. FAQ ACCORDION
   // ============================================
   
-  function initFAQ() {
-    const faqItems = document.querySelectorAll('.faq-item');
-    
-    if (CONFIG.DEBUG) {
-      console.log('🔍 FAQ items encontrados: ${faqItems.length}');
-    }
-    
-    faqItems.forEach(item => {
-      const trigger = item.querySelector('.faq-trigger');
-      const answer = item.querySelector('.faq-answer'); // CAMBIADO: .faq-content → .faq-answer
-      
-      if (!trigger || !answer) {
-        if (CONFIG.DEBUG) {
-          console.warn('⚠️ FAQ item sin trigger o answer:', item);
-        }
-        return;
-      }
-      
-      trigger.addEventListener('click', function() {
-        const isActive = this.classList.contains('active');
-        
-        // Toggle active state
-        this.classList.toggle('active');
-        answer.classList.toggle('active');
-        item.classList.toggle('active');
-        
-        // Update ARIA
-        this.setAttribute('aria-expanded', !isActive);
-        
-        // Adjust max-height for smooth animation
-        if (!isActive) {
-          answer.style.maxHeight = answer.scrollHeight + 'px';
-        } else {
-          answer.style.maxHeight = '0';
-        }
-        
-        if (CONFIG.DEBUG) {
-          console.log('FAQ ${isActive ? 'cerrado' : 'abierto'}:', this.textContent.trim());
-        }
-      });
-      
-      // Keyboard accessibility
-      trigger.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          this.click();
-        }
-      });
-    });
-    
-    if (CONFIG.DEBUG) {
-      console.log('✅ FAQ accordion activado en ${faqItems.length} preguntas');
-    }
-  }
-  
+// ============================================
+// 3. FAQ ACCORDION - VERSIÓN CORREGIDA
+// ============================================
+
+	function initFAQ() {
+	  const faqItems = document.querySelectorAll('.faq-item');
+	  
+	  if (CONFIG.DEBUG) {
+		console.log('🔍 FAQ items encontrados: ${faqItems.length}');
+	  }
+	  
+	  faqItems.forEach(item => {
+		const trigger = item.querySelector('.faq-trigger');
+		const answer = item.querySelector('.faq-answer'); // ✅ CORREGIDO: .faq-content → .faq-answer
+		
+		if (!trigger || !answer) {
+		  if (CONFIG.DEBUG) {
+			console.warn('⚠️ FAQ item sin trigger o answer:', item);
+		  }
+		  return;
+		}
+		
+		// Establecer altura inicial explícita para animación suave
+		answer.style.maxHeight = '0';
+		answer.style.overflow = 'hidden';
+		answer.style.transition = 'max-height 0.4s ease-out, padding 0.4s ease-out';
+		
+		trigger.addEventListener('click', function() {
+		  const isActive = this.classList.contains('active');
+		  
+		  // Toggle active state
+		  this.classList.toggle('active');
+		  answer.classList.toggle('active');
+		  item.classList.toggle('active');
+		  
+		  // Update ARIA
+		  this.setAttribute('aria-expanded', !isActive);
+		  
+		  // Adjust max-height for smooth animation
+		  if (!isActive) {
+			// Abrir: calcular altura real del contenido
+			answer.style.maxHeight = answer.scrollHeight + 'px';
+			
+			if (CONFIG.DEBUG) {
+			  console.log('✅ FAQ abierto: ${this.textContent.trim().substring(0, 50)}...');
+			}
+		  } else {
+			// Cerrar
+			answer.style.maxHeight = '0';
+			
+			if (CONFIG.DEBUG) {
+			  console.log('❌ FAQ cerrado: ${this.textContent.trim().substring(0, 50)}...');
+			}
+		  }
+		});
+		
+		// Keyboard accessibility
+		trigger.addEventListener('keydown', function(e) {
+		  if (e.key === 'Enter' || e.key === ' ') {
+			e.preventDefault();
+			this.click();
+		  }
+		});
+	  });
+	  
+	  if (CONFIG.DEBUG) {
+		console.log('✅ FAQ accordion activado en ${faqItems.length} preguntas');
+	  }
+	}
+	  
   
   // ============================================
   // 4. FORMULARIOS
@@ -981,4 +996,3 @@ document.head.appendChild(style);
   }
   
 })();
-
