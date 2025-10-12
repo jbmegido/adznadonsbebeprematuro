@@ -733,7 +733,210 @@
     };
   }
   
+  // ============================================
+// URGENCY COUNTDOWN TIMER
+// ============================================
+
+function initUrgencyCountdown() {
+  const hoursEl = document.getElementById('countdownHours');
+  const minutesEl = document.getElementById('countdownMinutes');
+  const secondsEl = document.getElementById('countdownSeconds');
+  const timerContainer = document.querySelector('.urgency-timer');
   
+  if (!hoursEl || !minutesEl || !secondsEl) {
+    if (CONFIG.DEBUG) {
+      console.warn('⚠️ Elementos de countdown no encontrados');
+    }
+    return;
+  }
+  
+  // Obtener o crear deadline (persiste durante la sesión)
+  let deadline = sessionStorage.getItem('urgencyDeadline');
+  
+  if (!deadline) {
+    // Primera visita: deadline en 24 horas
+    deadline = Date.now() + (24 * 60 * 60 * 1000);
+    sessionStorage.setItem('urgencyDeadline', deadline);
+    
+    if (CONFIG.DEBUG) {
+      console.log('✅ Nuevo deadline creado:', new Date(parseInt(deadline)));
+    }
+  } else {
+    deadline = parseInt(deadline);
+    
+    if (CONFIG.DEBUG) {
+      console.log('♻️ Deadline recuperado:', new Date(deadline));
+    }
+  }
+  
+  function updateCountdown() {
+    const now = Date.now();
+    const remaining = deadline - now;
+    
+    // Si expiró el timer
+    if (remaining <= 0) {
+      if (timerContainer) {
+        timerContainer.innerHTML = `
+          <div class="expired-message">
+            ⏰ <strong>Oferta finalizada.</strong><br>
+            Próxima producción disponible en 12 días.
+          </div>
+        `;
+        timerContainer.classList.add('expired');
+      }
+      
+      // Limpiar sessionStorage para reset en próxima visita
+      sessionStorage.removeItem('urgencyDeadline');
+      
+      if (CONFIG.DEBUG) {
+        console.log('⏱️ Countdown expirado');
+      }
+      
+      return;
+    }
+    
+    // Calcular horas, minutos, segundos restantes
+    const hours = Math.floor(remaining / (1000 * 60 * 60));
+    const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+    
+    // Actualizar DOM con padding
+    hoursEl.textContent = hours.toString().padStart(2, '0');
+    minutesEl.textContent = minutes.toString().padStart(2, '0');
+    secondsEl.textContent = seconds.toString().padStart(2, '0');
+    
+    // Efecto visual cuando queda poco tiempo (< 1 hora)
+    if (remaining < 3600000) {
+      timerContainer.style.animation = 'pulse-urgent-timer 1s infinite';
+    }
+  }
+  
+  // Actualizar inmediatamente
+  updateCountdown();
+  
+  // Actualizar cada segundo
+  const intervalId = setInterval(updateCountdown, 1000);
+  
+  // Limpiar interval si el usuario abandona la página
+  window.addEventListener('beforeunload', () => {
+    clearInterval(intervalId);
+  });
+  
+  if (CONFIG.DEBUG) {
+    console.log('✅ Urgency countdown inicializado');
+  }
+}
+
+
+// ============================================
+// DYNAMIC STOCK INDICATOR
+// ============================================
+
+function initDynamicStock() {
+  const unitsLeftEl = document.getElementById('unitsLeft');
+  const liveViewersEl = document.getElementById('liveViewers');
+  
+  if (!unitsLeftEl || !liveViewersEl) {
+    if (CONFIG.DEBUG) {
+      console.warn('⚠️ Elementos de stock dinámico no encontrados');
+    }
+    return;
+  }
+  
+  // Valores iniciales realistas
+  let baseStock = parseInt(localStorage.getItem('baseStock')) || 12;
+  let viewers = 7;
+  
+  // Función para simular venta
+  function simulateSale() {
+    // 25% probabilidad de venta si hay stock suficiente
+    if (Math.random() < 0.25 && baseStock > 5) {
+      baseStock--;
+      localStorage.setItem('baseStock', baseStock);
+      
+      // Actualizar DOM
+      unitsLeftEl.textContent = baseStock + ' packs';
+      
+      // Efecto visual de cambio
+      unitsLeftEl.style.color = '#E74C3C';
+      unitsLeftEl.style.transform = 'scale(1.15)';
+      unitsLeftEl.style.transition = 'all 0.3s ease-out';
+      
+      setTimeout(() => {
+        unitsLeftEl.style.color = '';
+        unitsLeftEl.style.transform = 'scale(1)';
+      }, 2000);
+      
+      if (CONFIG.DEBUG) {
+        console.log('📦 Stock actualizado: ${baseStock} packs restantes');
+      }
+      
+      // Si stock crítico, añadir clase de alerta
+      if (baseStock <= 5) {
+        unitsLeftEl.closest('.stock-units-remaining').style.animation = 
+          'pulse-critical 1.5s infinite';
+      }
+    }
+  }
+  
+  // Función para fluctuar viewers
+  function updateViewers() {
+    // Viewers fluctúan entre 3 y 15
+    const change = Math.random() > 0.5 ? 1 : -1;
+    viewers = Math.max(3, Math.min(15, viewers + change));
+    
+    liveViewersEl.textContent = viewers;
+    
+    if (CONFIG.DEBUG && Math.random() < 0.1) {
+      console.log('👀 Viewers activos: ${viewers}');
+    }
+  }
+  
+  // Simular actividad cada 20-50 segundos
+  function scheduleNextUpdate() {
+    const delay = Math.random() * 30000 + 20000; // 20-50 segundos
+    
+    setTimeout(() => {
+      simulateSale();
+      updateViewers();
+      scheduleNextUpdate();
+    }, delay);
+  }
+  
+  // Iniciar ciclo
+  scheduleNextUpdate();
+  
+  // Actualizar viewers cada 10-15 segundos
+  setInterval(updateViewers, Math.random() * 5000 + 10000);
+  
+  if (CONFIG.DEBUG) {
+    console.log('✅ Stock dinámico inicializado');
+    console.log('📦 Stock inicial: ${baseStock} packs');
+    console.log('👀 Viewers iniciales: ${viewers}');
+  }
+}
+
+
+// Añadir animación CSS adicional dinámicamente
+const style = document.createElement('style');
+style.textContent = '
+  @keyframes pulse-urgent-timer {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+  
+  @keyframes pulse-critical {
+    0%, 100% { 
+      border-color: #E74C3C;
+      box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.4);
+    }
+    50% { 
+      border-color: #C0392B;
+      box-shadow: 0 0 0 8px rgba(231, 76, 60, 0);
+    }
+  }
+';
+document.head.appendChild(style);
   // ============================================
   // 13. INIT ALL ON DOM READY
   // ============================================
@@ -744,6 +947,8 @@
       initSmoothScroll();
       initScrollAnimations();
       initFAQ();
+	  initUrgencyCountdown();  // 👈 AÑADIR AQUÍ
+	  initDynamicStock();       // 👈 Y AQUÍ
       initForms();
       initStickyCTA();
       initStickyBadge();
