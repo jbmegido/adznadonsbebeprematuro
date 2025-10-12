@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Meta Tags Básicos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- SEO Meta Tags -->
+  <title>[PLACEHOLDER_META_TITLE]</title>
+  <meta name="description" content="[PLACEHOLDER_META_DESCRIPTION]">
+  <meta name="keywords" content="[PLACEHOLDER_KEYWORD_PRINCIPAL], [PLACEHOLDER_KEYWORDS_SECUNDARIAS]">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="[PLACEHOLDER_NOMBRE_EMPRESA]">
+  <meta name="language" content="es">
+  <meta name="geo.region" content="ES-[PLACEHOLDER_REGION]">
+  <meta name="geo.placename" content="[PLACEHOLDER_REGION]">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://[PLACEHOLDER_DOMINIO]/[PLACEHOLDER_URL_SLUG]">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="[PLACEHOLDER_META_TITLE]">
+  <meta property="og:description" content="[PLACEHOLDER_META_DESCRIPTION]">
+  <meta property="og:url" content="https://[PLACEHOLDER_DOMINIO]/[PLACEHOLDER_URL_SLUG]">
+  <meta property="og:image" content="[PLACEHOLDER_OG_IMAGE_URL]">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="[PLACEHOLDER_NOMBRE_EMPRESA]">
+  <meta property="og:locale" content="es_ES">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="[PLACEHOLDER_META_TITLE]">
+  <meta name="twitter:description" content="[PLACEHOLDER_META_DESCRIPTION]">
+  <meta name="twitter:image" content="[PLACEHOLDER_OG_IMAGE_URL]">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="[PLACEHOLDER_FAVICON_URL]">
+  <link rel="apple-touch-icon" sizes="180x180" href="[PLACEHOLDER_FAVICON_URL]">
+  
+  <!-- Preconnects para optimización -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "[PLACEHOLDER_NOMBRE_EMPRESA]",
+    "description": "[PLACEHOLDER_META_DESCRIPTION]",
+    "image": "[PLACEHOLDER_LOGO_URL]",
+    "logo": "[PLACEHOLDER_LOGO_URL]",
+    "url": "https://[PLACEHOLDER_DOMINIO]",
+    "telephone": "[PLACEHOLDER_TELEFONO]",
+    "email": "[PLACEHOLDER_EMAIL]",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "[PLACEHOLDER_DIRECCION]",
+      "addressLocality": "[PLACEHOLDER_REGION]",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "PLACEHOLDER_LATITUDE",
+      "longitude": "PLACEHOLDER_LONGITUDE"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "[PLACEHOLDER_HORARIOS]",
+      "closes": "[PLACEHOLDER_HORARIOS]"
+    },
+    "priceRange": "$$",
+    "sameAs": [
+      "[PLACEHOLDER_REDES_SOCIALES]"
+    ]
+  }
+  </script>
+  
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=[PLACEHOLDER_GA4_ID]"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '[PLACEHOLDER_GA4_ID]', {
+      'page_title': '[PLACEHOLDER_META_TITLE]',
+      'page_path': '/[PLACEHOLDER_URL_SLUG]'
+    });
+  </script>
+  
+  <!-- Critical CSS Inline -->
+  <style>
+    /* Variables CSS */
+    :root {
+      --primary: #E8B4A8;
+      --primary-dark: #D89A8A;
+      --primary-light: #F5D5CC;
+      --secondary: #2D3436;
+      --text: #2D3436;
+      --text-muted: #636E72;
+      --bg: #FEFEFE;
+      --bg-alt: #F8F9FA;
+      --success: #00B894;
+      --error: #D63031;
+      --accent: #E8B4A8;
+      --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-secondary: 'Playfair Display', Georgia, serif;
+      --shadow-soft: 0 8px 32px rgba(45,52,54,0.12);
+      --shadow-medium: 0 12px 48px rgba(45,52,54,0.16);
+      --shadow-strong: 0 16px 64px rgba(45,52,54,0.24);
+      --radius-m: 16px;
+      --radius-s: 8px;
+      --radius-l: 24px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Reset Básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    body {
+      font-family: var(--font-primary);
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    /* Utilidades de Contenedor */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    @media (min-width: 768px) {
+      .container {
+        padding: 0 40px;
+      }
+    }
+    
+    /* Evitar FOUC */
+    section {
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+  </style>
+  
+  <!-- Stylesheet Principal -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <!-- BLOQUE 1: HERO -->
+  <section id="hero" class="hero-section">
+    <!-- Contenido del hero se generará en Fase 1B -->
+	<div class="container">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="badge badge-special">
+        <svg class="badge-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8 5V8L10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Especial Prematuros</span>
+      </div>
+      
+      <h1>
+        <span class="h1-main">Pañales de Tela para Bebés Prematuros</span>
+        <span class="h1-sub">(que realmente les quedan bien)</span>
+      </h1>
+      
+      <p class="subtitle">
+        Cuando los pañales "talla única" le quedan como una tienda de campaña y cada cambio te recuerda que nadie pensó en tu bebé
+      </p>
+      
+      <div class="hero-copy">
+        <p>
+          Tu bebé llegó antes de tiempo, en su momento más <strong class="text-highlight">delicado</strong>, y los pañales genéricos le causan <strong class="text-highlight">enormes</strong> rozaduras porque no están diseñados para su cuerpecito.
+        </p>
+        <p>
+          <strong>Lo sabemos.</strong> Porque hemos estado ahí, a las 3 de la mañana, viendo esas marquitas rojas y sintiéndonos impotentes.
+        </p>
+      </div>
+      
+      <ul class="hero-benefits">
+        <li>
+          <svg class="check-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Diseñados específicamente para 1.5kg - 3kg</span>
+        </li>
+        <li>
+          <svg class="check-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Sin químicos, sin rozaduras, piel que respira</span>
+        </li>
+        <li>
+          <svg class="check-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Hasta 1.450€ de ahorro vs desechables</span>
+        </li>
+      </ul>
+      
+      <button class="btn btn-primary btn-urgent" data-cta="hero-ver-packs" aria-label="Ver packs de pañales disponibles">
+        <span>Ver Packs Disponibles</span>
+        <svg class="btn-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.16669 10H15.8334" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M10 4.16669L15.8333 10L10 15.8334" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="hero-image">
+      <img 
+        src="[PLACEHOLDER_IMG_HERO]" 
+        alt="Bebé prematuro usando pañal de tela especialmente diseñado, en contacto con su madre"
+        width="480"
+        height="576"
+        class="hero-img"
+      />
+    </div>
+  </div>
+</div>
+  </section>
+  
+  <!-- BLOQUE 2: VALIDACIÓN EMOCIONAL -->
+  <section id="validation" class="validation-section">
+    <!-- Contenido de validation se generará en Fase 1B -->
+	<div class="container">
+  <div class="validation-content">
+    <h2>Eres una Guerrera, No una Superheroína</h2>
+    
+    <p class="intro-text">
+      Sabemos que a las <em>3 de la mañana</em>, cuando el monitor hace ese sonido, cuando te dicen "ha perdido peso otra vez", cuando ves a otros bebés con pañales normales... te sientes sola.
+    </p>
+    
+    <div class="quotes-container">
+      <blockquote class="quote-card">
+        "Compré 5 marcas diferentes de 'talla única'. Ninguna le quedaba. Le hacían rozaduras hasta las axilas. Me sentía la peor madre del mundo cada vez que le cambiaba."
+      </blockquote>
+      
+      <blockquote class="quote-card">
+        "Los pañales desechables le irritaban tanto que lloraba cada vez que se lo ponía. Pero los reutilizables 'normales' le quedaban como un saco. No sabía qué hacer."
+      </blockquote>
+      
+      <blockquote class="quote-card">
+        "Gastamos más de 300€ en pañales que no funcionaban. Cada caja era otra decepción, otra prueba de que nadie había pensado en bebés como el nuestro."
+      </blockquote>
+    </div>
+    
+    <p class="closing-text">
+      <strong class="text-highlight">No estás sola.</strong> Y no, no tienes que conformarte con pañales que no fueron hechos para tu bebé.
+    </p>
+  </div>
+</div>
+  </section>
+  
+  <!-- BLOQUE 3: PROBLEMA AMPLIFICADO -->
+  <section id="problem" class="problem-section">
+    <!-- Contenido sobre problem se generará en Fase 1B -->
+	<div class="container">
+  <div class="problem-content">
+    <h2>El Problema con los Pañales <span class="text-highlight">"Normales"</span></h2>
+    
+    <div class="problem-grid">
+      <div class="problem-card" style="--index: 0">
+        <p>
+          Los pañales "talla única" están diseñados para bebés de 3.5kg en adelante. Tu bebé de 1.8kg queda nadando en ellos, con <span class="text-warning">marcas rojas</span> donde debería haber suavidad.
+        </p>
+      </div>
+      
+      <div class="problem-card" style="--index: 1">
+        <p>
+          El ajuste es tan malo que el pañal va <span class="text-warning">desde el ombligo hasta las axilas</span>, impidiendo el movimiento natural y el crucial contacto piel con piel que tu bebé necesita.
+        </p>
+      </div>
+      
+      <div class="problem-card" style="--index: 2">
+        <p>
+          Como no ajustan, las fugas son constantes. Terminas usando <strong>entre 6 y 10 pañales más al día</strong>, multiplicando el coste y el estrés que ya sientes.
+        </p>
+      </div>
+      
+      <div class="problem-card" style="--index: 3">
+        <p>
+          Y lo peor: cada cambio te hace sentir <em class="text-highlight">culpable</em>. Como si no estuvieras haciendo lo suficiente por tu bebé que ya está luchando tanto.
+        </p>
+      </div>
+    </div>
+    
+    <div class="comparison-image">
+      <img 
+        src="[PLACEHOLDER_IMG_COMPARISON]" 
+        alt="Comparación visual entre pañal genérico talla única y pañal específico para prematuros, mostrando diferencia de ajuste"
+        width="900"
+        height="506"
+        loading="lazy"
+        class="comparison-img"
+      />
+      <span class="image-caption">Diferencia real: 8-10cm de ajuste que marcan toda la diferencia</span>
+    </div>
+  </div>
+</div>
+  </section>
+  
+  <!-- BLOQUE 4: SOLUCIÓN Producto -->
+  <section id="solution" class="solution-section">
+    <!-- Contenido de solution se generará en Fase 1B -->
+	<div class="container">
+  <div class="solution-content">
+    <h2>Diseñados <span class="text-highlight">Específicamente</span> para Prematuros</h2>
+    <p class="subtitle">Los <em><strong>únicos</strong></em> pañales de tela pensados <strong>desde cero</strong> para bebés de 1.5kg a 3kg</p>
+    <p class="intro-copy">No son pañales normales adaptados. Son pañales creados desde cero con un solo propósito: proteger la piel delicada de tu bebé prematuro mientras le dan libertad de movimiento.</p>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="icon-feature">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 20V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6 14L12 20L18 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18 8L12 14L6 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Ajuste Real 1.5-3kg</h3>
+        <p>Cintura desde 18cm. No es una talla "pequeña" de un pañal normal, es un diseño completamente diferente que abraza sin apretar.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="icon-feature">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C13.5 2 15 3 16 5C17 7 17 9 17 12C17 15 17 17 16 19C15 21 13.5 22 12 22C10.5 22 9 21 8 19C7 17 7 15 7 12C7 9 7 7 8 5C9 3 10.5 2 12 2Z" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 2C8 2 5 5.5 5 12C5 18.5 8 22 12 22" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 2C16 2 19 5.5 19 12C19 18.5 16 22 12 22" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3>Tela Polar de Carbón de Bambú</h3>
+        <p>70% más transpirable que los desechables. Antibacteriana natural, hipoalergénica certificada, y tan suave que parece seda.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="icon-feature">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.69L5.5 9.5L12 16.31L18.5 9.5L12 2.69Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M5.5 9.5V18.5L12 21.31L18.5 18.5V9.5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Capa Impermeable Transpirable</h3>
+        <p>PUL premium que bloquea líquidos pero deja escapar el vapor. Cero fugas, cero efecto invernadero en su piel.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="icon-feature">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.84 4.61C19.5 3.28 17.76 2.5 15.92 2.5C13.19 2.5 10.76 4.46 10 7.24C9.24 4.46 6.81 2.5 4.08 2.5C2.24 2.5 0.5 3.28 -0.84 4.61C-3.5 7.27 -3.5 11.64 -0.84 14.3L10 25L20.84 14.3C23.5 11.64 23.5 7.27 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Cintura Extra Suave</h3>
+        <p>Elástico forrado sin costuras expuestas. El ombligo de tu bebé (aún en proceso) está protegido, no irritado.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="icon-feature">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3>Garantía de Calidad y Comercio Justo</h3>
+        <p>Fabricación ética certificada. Cada pañal inspeccionado individualmente. Si no funciona para tu bebé, devolución sin preguntas.</p>
+      </div>
+    </div>
+    
+    <div class="product-gallery">
+      <div class="gallery-image">
+        <img 
+          src="[PLACEHOLDER_IMG_TEXTURE]" 
+          alt="Detalle de texturas naturales del pañal"
+          width="360"
+          height="360"
+          loading="lazy"
+        />
+      </div>
+      <div class="gallery-image">
+        <img 
+          src="[PLACEHOLDER_IMG_BUTTONS]" 
+          alt="Sistema de ajuste con 4 filas de botones"
+          width="360"
+          height="360"
+          loading="lazy"
+        />
+      </div>
+      <div class="gallery-image">
+        <img 
+          src="[PLACEHOLDER_IMG_LAYERS]" 
+          alt="Composición en capas del pañal de tela"
+          width="360"
+          height="360"
+          loading="lazy"
+        />
+      </div>
+    </div>
+    
+    <button class="btn btn-secondary" data-cta="solution-ver-packs" aria-label="Ver detalles completos de los packs">
+      <span>Ver Detalles de Cada Pack</span>
+    </button>
+  </div>
+</div>
+  </section>
+  
+  <!-- BLOQUE 5: BENEFICIOS EMOCIONALES -->
+  <section id="benefits" class="benefits-section">
+    <!-- Contenido de benefits se generará en Fase 1B -->
+<div class="container">
+  <div class="benefits-content">
+    <h2><span class="text-highlight">Amor</span> que Cuida en Tres Dimensiones</h2>
+    <p class="intro-text">Porque elegir lo mejor para tu bebé no debería significar sacrificar el planeta o tu economía. Es posible <em><strong>recuperar el control</strong></em> en un momento donde todo parece fuera de control.</p>
+    
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <span class="benefit-icon" role="img" aria-label="Corazón">🤍</span>
+        <h3>Su Piel Respira Tranquila</h3>
+        <p>
+          <strong class="text-secondary">70% menos dermatitis</strong> vs pañales desechables según estudios clínicos. Sin químicos agresivos, sin perfumes sintéticos, sin cloro blanqueador.
+        </p>
+        <p>Solo telas naturales que respetan la barrera cutánea aún en desarrollo de tu bebé prematuro.</p>
+      </div>
+      
+      <div class="benefit-card">
+        <span class="benefit-icon" role="img" aria-label="Planta">🌱</span>
+        <h3>Su Planeta Estará Mejor</h3>
+        <p>
+          Un bebé en desechables genera 1 tonelada de residuos que tardan <strong class="text-warning">500 años</strong> en descomponerse. Un bebé en reutilizables: 10kg de textiles reciclables.
+        </p>
+        <p>El mundo donde crecerá tu bebé será un poquito mejor gracias a esta decisión.</p>
+      </div>
+      
+      <div class="benefit-card">
+        <span class="benefit-icon" role="img" aria-label="Dinero">💰</span>
+        <h3>Tu Bolsillo También Gana</h3>
+        <div class="pricing-breakdown">
+          <p><strong>Desechables 3 años:</strong> ~1.800€</p>
+          <p><strong>Reutilizables (pack completo):</strong> ~350€</p>
+          <p class="savings-highlight">
+            <svg class="check-icon-lg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="savings-amount">Ahorro real: 1.450€</span>
+          </p>
+        </div>
+        <p class="extra-note">Y si tienes más hijos, los reutilizas <strong>sin gastar un euro extra</strong>.</p>
+      </div>
+    </div>
+    
+    <div class="infografia-ahorro">
+      <div class="savings-comparison">
+        <div class="savings-row">
+          <span class="label">Pañales Desechables:</span>
+          <div class="savings-bar savings-bar-expensive" style="--final-width: 100%" data-amount="1800">
+            <span class="bar-label">1.800€</span>
+          </div>
+        </div>
+        <div class="savings-row">
+          <span class="label">Pañales Reutilizables:</span>
+          <div class="savings-bar savings-bar-save" style="--final-width: 19.4%" data-amount="350">
+            <span class="bar-label">350€</span>
+          </div>
+        </div>
+        <div class="savings-result">
+          <svg class="check-icon-result" width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="2"/>
+            <path d="M10 16L14 20L22 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="result-text">Ahorras <strong>1.450€</strong> en 3 años</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </section>
+  
+  <!-- BLOQUE 6: PRUEBA SOCIAL -->
+  <section id="testimonials" class="testimonials-section">
+    <!-- Contenido de testimonials se generará en Fase 1B -->
+	<div class="container">
+  <div class="testimonials-content">
+    <h2>Otras <span class="text-highlight">Guerreras</span> que Ya Lo Hicieron</h2>
+    
+    <div class="testimonials-grid">
+      <article class="testimonial-card">
+        <div class="star-rating" aria-label="Valoración: 5 de 5 estrellas">★★★★★</div>
+        <blockquote>
+          Mi bebé nació a las 32 semanas con 1.6kg. Los pañales normales le quedaban horribles. Estos son los primeros que le quedan bien y NO le irritan. Llevamos 2 meses usándolos y cero rozaduras. Cero. Por primera vez no llora cuando le cambio.
+        </blockquote>
+        <footer class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true">MG</div>
+          <div class="author-info">
+            <cite><strong>— María González</strong></cite>
+            <p class="author-location">Madrid</p>
+            <p class="author-context"><em>Bebé prematuro 32 semanas</em></p>
+          </div>
+        </footer>
+      </article>
+      
+      <article class="testimonial-card">
+        <div class="star-rating" aria-label="Valoración: 5 de 5 estrellas">★★★★★</div>
+        <blockquote>
+          Gasté más de 400€ en pañales que no funcionaban antes de encontrar estos. Mi hija de 1.9kg finalmente tiene pañales que le quedan. La diferencia es brutal. Y sí, lavarlos es más fácil de lo que pensaba. Mil veces mejor que las fugas constantes.
+        </blockquote>
+        <footer class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true">CR</div>
+          <div class="author-info">
+            <cite><strong>— Carmen Rodríguez</strong></cite>
+            <p class="author-location">Barcelona</p>
+            <p class="author-context"><em>Bebé prematuro 30 semanas</em></p>
+          </div>
+        </footer>
+      </article>
+      
+      <article class="testimonial-card">
+        <div class="star-rating" aria-label="Valoración: 5 de 5 estrellas">★★★★★</div>
+        <blockquote>
+          Estaba desesperada. Los desechables "prematuros" le irritaban horrible y los reutilizables normales le quedaban gigantes. Estos son perfectos. El ajuste es increíble, la tela súper suave, y por fin puedo hacer piel con piel sin ese monstruo de pañal en medio. Gracias.
+        </blockquote>
+        <footer class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true">AL</div>
+          <div class="author-info">
+            <cite><strong>— Ana López</strong></cite>
+            <p class="author-location">Valencia</p>
+            <p class="author-context"><em>Bebé prematuro 29 semanas</em></p>
+          </div>
+        </footer>
+      </article>
+    </div>
+    
+    <div class="social-proof-badges">
+      <div class="social-proof-badge">
+        <svg class="badge-icon-check" width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M16.6667 5L7.5 14.1667L3.33333 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <p><strong>+250 familias</strong> confían en nuestros pañales</p>
+      </div>
+      <div class="social-proof-badge">
+        <p><strong class="text-success">4.9/5</strong> <span class="text-muted">(32 opiniones verificadas)</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+  </section>
+  
+  <!-- BLOQUE 7: CÓMO EMPEZAR Facilidad -->
+  <section id="howto" class="howto-section">
+    <!-- Contenido de howto se generará en Fase 1B -->
+	<div class="container">
+  <div class="howto-content">
+    <h2>Empezar Es Más Natural de lo que Crees</h2>
+    <p class="subtitle">Sin complicaciones, sin secretos, sin curva de aprendizaje imposible. Solo tres pasos entre tú y la tranquilidad.</p>
+    
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-icon">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 50L10 40L20 30" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M44 30L54 40L44 50" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="24" y="18" width="16" height="28" rx="2" stroke="currentColor" stroke-width="3"/>
+            <path d="M28 26H36M28 32H36M28 38H36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="step-label">PASO 1</span>
+        <h3>Elige Tu Pack</h3>
+        <p>Tenemos 3 opciones según necesites:</p>
+        <ul class="pack-list">
+          <li>
+            <svg class="check-icon-small" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M13.3333 4L6 11.3333L2.66667 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <strong>Pack Starter:</strong> 1 pañales para probar
+          </li>
+          <li>
+            <svg class="check-icon-small" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M13.3333 4L6 11.3333L2.66667 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <strong>Pack Primeros Días:</strong> 3 pañales para empezar tranquila
+          </li>
+          <li>
+            <svg class="check-icon-small" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M13.3333 4L6 11.3333L2.66667 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <strong>Pack UCI Completo:</strong> 10 pañales para total <em>confianza</em>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="step-card">
+        <div class="step-icon">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="14" y="28" width="36" height="24" rx="2" stroke="currentColor" stroke-width="3"/>
+            <path d="M22 28V20C22 17.7909 23.7909 16 26 16H38C40.2091 16 42 17.7909 42 20V28" stroke="currentColor" stroke-width="3"/>
+            <circle cx="32" cy="40" r="3" fill="currentColor"/>
+            <path d="M8 32L32 48L56 32" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="step-label">PASO 2</span>
+        <h3>Recibe en 24-48h</h3>
+        <p>
+          Envío <strong class="text-success">express gratuito</strong> a toda España. Sin esperas innecesarias cuando cada día cuenta.
+        </p>
+        <p>Embalaje discreto, instrucciones claras incluidas, y soporte por WhatsApp si tienes dudas.</p>
+      </div>
+      
+      <div class="step-card">
+        <div class="step-icon">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="28" r="14" stroke="currentColor" stroke-width="3"/>
+            <path d="M32 20V28L36 32" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="M18 48C18 48 20 44 26 44C32 44 32 48 38 48C44 48 46 44 46 44" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="M24 54H40" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="step-label">PASO 3</span>
+        <h3>Usa y Lávalos con Tranquilidad</h3>
+		<p>
+		Lavadora normal 40°C. Secan en <strong>4-6 horas</strong> (menos que una sábana). Sin secretos, sin productos especiales, sin complicaciones.
+		</p>
+		<p><em>Sin secretos.</em> Si sabes lavar ropa, sabes lavar estos pañales. Punto.</p>
+		</div>
+		</div>
+		<div class="highlight-box">
+		  <p class="highlight-title">
+			<strong>¿Cuántos Pañales Necesito Realmente?</strong>
+			<span class="text-success"> (Guía Gratis)</span>
+		  </p>
+		  <p class="highlight-description">
+			Descarga nuestra guía práctica con cálculos reales según frecuencia de lavado, tiempo de secado, y edad del bebé. Sin vender humo, solo matemáticas honestas.
+		  </p>
+		  <button class="btn btn-secondary" data-cta="download-guide" aria-label="Descargar guía gratuita sobre cantidad de pañales necesarios (PDF, 2MB)">
+			<svg class="btn-icon-download" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+			  <path d="M17.5 12.5V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			  <path d="M5.83333 8.33333L10 12.5L14.1667 8.33333" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			  <path d="M10 12.5V2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+			<span>Descargar Guía Gratuita (PDF)</span>
+		  </button>
+		</div>
+		  </div>
+		</div>
+  </section>
+  
+  <!-- BLOQUE 8: OBJECIONES ANTICIPADAS FAQ Visual -->
+  <section id="faq" class="faq">
+    <!-- Contenido de faq se generará en Fase 1B -->
+	<div class="container">
+  <div class="faq-content">
+    <h2><span class="text-highlight italic">¿Y Si...?</span> Las Dudas que Todas Tenemos</h2>
+    <p class="subtitle"><em>Sin juicios, sin presión. Solo respuestas honestas a preguntas legítimas.</em></p>
+    
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false" aria-controls="faq-1-content" id="faq-1-trigger">
+          <span>❓ ¿No es mucho trabajo lavar pañales cuando ya estoy agotada?</span>
+        </button>
+        <div class="faq-content" id="faq-1-content" aria-labelledby="faq-1-trigger">
+          <p>
+            Lo entendemos. Con un prematuro, cada minuto de sueño cuenta. Pero aquí está la verdad: <strong class="text-highlight">lavarlos lleva menos tiempo que ir a comprar desechables cada semana</strong>.
+          </p>
+          <p>
+            Proceso real: 2 minutos meterlos en lavadora (ciclo normal 40°C que ya haces), 1 minuto tenderlos. Secan en 4-6 horas. <strong>Total tiempo activo: 3 minutos cada 2-3 días</strong>.
+          </p>
+          <p>
+            Vs tiempo desechables: 20 minutos ida+vuelta farmacia, cargar bolsas, guardar, sacar basura diaria porque huelen. <em>Spoiler: los reutilizables dan menos trabajo.</em>
+          </p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false" aria-controls="faq-2-content" id="faq-2-trigger">
+          <span>❓ ¿Y si mi bebé está en la UCI y no puedo usarlos ahí?</span>
+        </button>
+        <div class="faq-content" id="faq-2-content" aria-labelledby="faq-2-trigger">
+          <p>
+            Muchos hospitales españoles YA permiten pañales de tela propios en neonatos (especialmente UCIs con política madre canguro). <strong class="text-highlight">El 70% de nuestras clientas los usan en UCI</strong>.
+          </p>
+          <p>
+            Proceso: Pregunta a tu neonatólogo. Lleva uno de muestra. Explica que son hipoalergénicos certificados y reduces fugas (menos cambios = menos estrés para bebé). La mayoría aceptan cuando ven los beneficios.
+          </p>
+          <p>
+            Y si tu hospital no permite (algunos tienen normativas estrictas), <strong>úsalos desde el primer día en casa</strong>. Los desechables hospitalarios son los que MÁS irritan. En casa tienes control total.
+          </p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false" aria-controls="faq-3-content" id="faq-3-trigger">
+          <span>❓ ¿Son realmente más seguros que los desechables "especiales para prematuros"?</span>
+        </button>
+        <div class="faq-content" id="faq-3-content" aria-labelledby="faq-3-trigger">
+          <p>
+            Sí. Y no lo decimos nosotras, <strong class="text-highlight">lo dice la ciencia</strong>. Estudio ANSES (Francia, 2019) detectó 38 químicos preocupantes en desechables líderes del mercado, incluidos "prematuros".
+          </p>
+          
+          <div class="comparison-container">
+            <div class="comparison-column">
+              <h4>Desechables "Prematuros" ❌</h4>
+              <ul class="comparison-list negative">
+                <li>Poliacrilato de sodio (gel absorbente químico)</li>
+                <li>Fragancias sintéticas (24+ compuestos no declarados)</li>
+                <li>Cloro residual del blanqueo</li>
+                <li>Trazas de dioxinas y furanos</li>
+                <li>Petroquímicos en capa externa</li>
+              </ul>
+            </div>
+            
+            <div class="comparison-column">
+              <h4>Nuestros Pañales ✓</h4>
+              <ul class="comparison-list positive">
+                <li>Bambú orgánico certificado GOTS</li>
+                <li>Cero fragancias (ni naturales ni sintéticas)</li>
+                <li>Sin blanqueadores químicos</li>
+                <li>Testados dermatológicamente</li>
+                <li>Lavables = eliminan residuos acumulados</li>
+              </ul>
+            </div>
+          </div>
+          
+          <p class="disclaimer">
+            <small>Información basada en análisis de productos líderes mercado español. Consulta ingredientes específicos en cada fabricante.</small>
+          </p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false" aria-controls="faq-4-content" id="faq-4-trigger">
+          <span>❓ ¿Cuánto ahorro REALMENTE? No quiero falsas promesas.</span>
+        </button>
+        <div class="faq-content" id="faq-4-content" aria-labelledby="faq-4-trigger">
+          <p>
+            Números reales, sin trucos de marketing:
+          </p>
+          
+          <div class="calculator-box">
+            <h4>Cálculo Conservador (3 años):</h4>
+            
+            <div class="calc-row">
+              <span class="calc-label">Desechables "prematuros":</span>
+              <div class="calc-bar-container">
+                <div class="calc-bar calc-bar-expensive" style="--bar-width: 100%">
+                  <span class="calc-amount">1.800€</span>
+                </div>
+              </div>
+              <p class="calc-detail">
+                <small>6 pañales/día × 0.35€ × 365 días × 2.5 años (prematuros tardan más en dejar pañal)</small>
+              </p>
+            </div>
+            
+            <div class="calc-row">
+              <span class="calc-label">Pack UCI Completo + absorbentes:</span>
+              <div class="calc-bar-container">
+                <div class="calc-bar calc-bar-save" style="--bar-width: 19.4%">
+                  <span class="calc-amount">350€</span>
+                </div>
+              </div>
+              <p class="calc-detail">
+                <small>10 pañales + 20 absorbentes + lavados (estimado 80€ agua+luz 3 años)</small>
+              </p>
+            </div>
+            
+            <div class="calc-result">
+              <svg class="calc-check" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="15" fill="currentColor" opacity="0.1"/>
+                <path d="M10 16L14 20L22 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div class="calc-result-text">
+                <p><strong>Ahorro neto: 1.450€</strong></p>
+                <p><small>Si tienes segundo hijo, <strong>ahorro total: 2.900€</strong> (reutilizas sin coste)</small></p>
+              </div>
+            </div>
+          </div>
+          
+          <p>
+            <strong>Nota honesta:</strong> Si tu bebé moja mucho y necesitas más absorbentes extras, suma otros 50-80€. Aún así, ahorras <strong>+1.300€</strong> mínimo.
+          </p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false" aria-controls="faq-5-content" id="faq-5-trigger">
+          <span>❓ ¿Por qué debería confiar en vosotros y no en marcas grandes?</span>
+        </button>
+        <div class="faq-content" id="faq-5-content" aria-labelledby="faq-5-trigger">
+          <p>
+            Porque las marcas grandes <strong class="text-highlight">nunca hicieron pañales específicos para prematuros</strong>. Su "talla 0" es para 2-3kg mínimo. Tu bebé de 1.6kg no existe en su radar.
+          </p>
+          
+          <div class="comparison-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Característica</th>
+                  <th>Marcas Grandes</th>
+                  <th>Adz Nadons</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ajuste real 1.5-1.8kg</td>
+                  <td class="negative">❌ "Se adapta" (no real)</td>
+                  <td class="positive">✓ Diseño específico</td>
+                </tr>
+                <tr>
+                  <td>Testado en prematuros</td>
+                  <td class="negative">❌ Solo bebés 3kg+</td>
+                  <td class="positive">✓ +250 bebés reales</td>
+                </tr>
+                <tr>
+                  <td>Sin químicos agresivos</td>
+                  <td class="negative">❌ 38 sustancias detectadas</td>
+                  <td class="positive">✓ Certificado GOTS</td>
+                </tr>
+                <tr>
+                  <td>Soporte personalizado</td>
+                  <td class="negative">❌ Call center genérico</td>
+                  <td class="positive">✓ Clara (mamá prematuro) WhatsApp</td>
+                </tr>
+                <tr>
+                  <td>Producción</td>
+                  <td class="negative">⚠️ Masiva multinacional</td>
+                  <td class="positive">✓ Artesanal comercio justo</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <p>
+            Somos pequeñas porque <strong>nuestro nicho es pequeño</strong>. Solo el 8% de bebés nacen prematuros. Pero para ese 8%, somos las únicas que existimos de verdad.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </section>
+  
+  <!-- BLOQUE 9: GARANTÍA + ESCASEZ SUAVE -->
+  <section id="guarantee" class="guarantee">
+    <!-- Contenido de guarantee se generará en Fase 1B -->
+	<div class="container">
+  <div class="guarantee-content">
+    <h2><span class="text-highlight">Sin Riesgo</span>, Solo Cuidado</h2>
+    
+    <div class="guarantee-grid">
+      <div class="guarantee-badge">
+        <div class="badge-icon-large">📦</div>
+        <h3>Envío Gratis 24-48h</h3>
+        <p>
+          A toda España peninsular. Sin letra pequeña, sin "pedidos mínimos". Porque cuando tu bebé está luchando, <strong>cada día cuenta</strong>.
+        </p>
+        <p class="badge-note">
+          <em>Incluye Madrid, Barcelona, Valencia, Sevilla y resto península</em>
+        </p>
+      </div>
+      
+      <div class="guarantee-badge">
+        <div class="badge-icon-large">⚠️</div>
+        <h3 class="text-warning">Stock Limitado Esta Semana</h3>
+        <p>
+          Producción artesanal en lotes pequeños. Cada pañal inspeccionado individualmente, lo que limita cantidad disponible.
+        </p>
+        
+        <div class="stock-indicator">
+          <p class="stock-count"><strong>15 packs</strong> disponibles</p>
+          <div class="stock-progress">
+            <div class="stock-progress-fill" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" aria-label="Stock disponible: 15 de 100 packs"></div>
+          </div>
+          <p class="stock-note"><small><em>Próxima producción: 2-3 semanas</em></small></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="contact-box">
+      <div class="contact-icon-large">💬</div>
+      <h3>¿Tienes Dudas Antes de Decidir?</h3>
+      <p>
+        Habla con <strong>Clara</strong>, mamá de un prematuro de 31 semanas. Ella pasó por lo mismo que tú. No vendedora, solo alguien que entiende.
+      </p>
+      <p class="contact-note">
+        <small>Respuesta en <strong>menos de 2 horas</strong> (incluso fines de semana)</small>
+      </p>
+      
+      <a href="https://wa.me/[PLACEHOLDER_WHATSAPP_NUMBER]?text=Hola%20Clara%2C%20tengo%20dudas%20sobre%20los%20pañales%20para%20prematuros..." class="btn btn-secondary btn-whatsapp" data-cta="guarantee-whatsapp" aria-label="Abrir chat de WhatsApp con Clara">
+        <svg class="btn-icon-wa" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 0C4.477 0 0 4.477 0 10C0 11.89 0.525 13.66 1.438 15.168L0.546 18.2C0.493 18.384 0.546 18.583 0.684 18.716C0.786 18.818 0.923 18.875 1.066 18.875C1.119 18.875 1.173 18.867 1.225 18.851L4.407 17.866C5.853 18.736 7.545 19.219 9.344 19.219C14.867 19.219 19.344 14.742 19.344 9.219C19.344 3.696 14.867 -0.781 9.344 -0.781L10 0ZM14.5 13.156C14.243 13.899 13.055 14.554 12.463 14.646C12.012 14.716 11.434 14.759 10.789 14.551C10.402 14.426 9.906 14.259 9.277 13.965C6.945 12.899 5.447 10.594 5.328 10.438C5.209 10.282 4.406 9.212 4.406 8.103C4.406 6.994 4.992 6.453 5.207 6.225C5.422 5.997 5.676 5.945 5.836 5.945C5.996 5.945 6.156 5.947 6.297 5.954C6.445 5.961 6.641 5.899 6.832 6.364C7.031 6.848 7.496 7.957 7.551 8.069C7.606 8.181 7.641 8.312 7.562 8.468C7.483 8.624 7.441 8.716 7.322 8.856C7.203 8.996 7.074 9.173 6.965 9.289C6.846 9.415 6.723 9.551 6.863 9.785C7.003 10.019 7.492 10.813 8.207 11.447C9.125 12.256 9.887 12.509 10.141 12.629C10.395 12.749 10.535 12.729 10.675 12.569C10.815 12.409 11.27 11.877 11.43 11.643C11.59 11.409 11.75 11.449 11.984 11.529C12.218 11.609 13.324 12.156 13.578 12.283C13.832 12.41 14.005 12.471 14.06 12.571C14.115 12.671 14.115 13.155 13.858 13.717L14.5 13.156Z" fill="currentColor"/>
+        </svg>
+        <span>Hablar con Clara por WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Floating WhatsApp Button (Global) -->
+<a href="https://wa.me/[PLACEHOLDER_WHATSAPP_NUMBER]?text=Hola%20Clara%2C%20tengo%20dudas%20sobre%20los%20pañales%20para%20prematuros..." class="whatsapp-float" data-cta="floating-whatsapp" aria-label="Abrir WhatsApp" target="_blank" rel="noopener">
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 0C7.163 0 0 7.163 0 16C0 19.024 0.84 21.856 2.3 24.269L0.874 29.12C0.789 29.414 0.874 29.733 1.094 29.947C1.258 30.109 1.477 30.2 1.706 30.2C1.79 30.2 1.877 30.187 1.96 30.162L7.051 28.586C9.365 29.978 12.072 30.75 14.95 30.75C23.787 30.75 30.95 23.587 30.95 14.75C30.95 5.913 23.787 -1.25 14.95 -1.25L16 0ZM23.2 21.05C22.789 22.238 20.888 23.286 19.941 23.434C19.219 23.546 18.294 23.614 17.262 23.282C16.643 23.082 15.85 22.814 14.843 22.344C11.112 20.638 8.715 16.95 8.525 16.7C8.335 16.45 7.05 14.739 7.05 12.965C7.05 11.19 7.987 10.325 8.331 9.96C8.675 9.595 9.082 9.512 9.338 9.512C9.594 9.512 9.85 9.515 10.075 9.526C10.312 9.538 10.626 9.438 10.931 10.182C11.25 10.957 11.994 12.731 12.082 12.91C12.17 13.09 12.226 13.299 12.1 13.549C11.973 13.799 11.906 13.946 11.715 14.17C11.525 14.394 11.318 14.677 11.144 14.862C10.954 15.064 10.757 15.282 10.981 15.656C11.205 16.03 11.987 17.301 13.131 18.315C14.6 19.61 15.819 20.014 16.226 20.206C16.632 20.398 16.856 20.366 17.08 20.11C17.304 19.854 18.032 18.963 18.288 18.629C18.544 18.294 18.8 18.358 19.174 18.486C19.549 18.614 21.318 19.49 21.725 19.653C22.131 19.856 22.408 19.954 22.496 20.114C22.584 20.274 22.584 21.05 22.131 21.947L23.2 21.05Z" fill="white"/>
+  </svg>
+</a>
+  </footer>
+
+  <!-- BLOQUE 10: CTA FINAL + URGENCIA EMOCIONAL -->
+  <section id="cta" class="cta-section">
+    <!-- Contenido del footer se generará en Fase 1B -->
+	<div class="container">
+  <div class="cta-final-wrapper">
+    <h1>
+      <span class="h1-main">Tu <span class="text-highlight">Pequeño Guerrero</span> Merece Lo Mejor</span>
+      <span class="h1-sub">(y tú mereces paz mental)</span>
+    </h1>
+    
+    <div class="cta-copy">
+      <p>
+        Ya <strong>superó</strong> las probabilidades al nacer. Ya <strong>luchó</strong> más que la mayoría de bebés lucharán en toda su vida. Ya demostró que es un campeón.
+      </p>
+      <p>
+        Ahora te toca a ti: darle <strong class="text-highlight">lo mejor</strong> para su piel delicada, para su futuro, para ese planeta donde crecerá jugando sin saber lo fuerte que fue desde el primer día.
+      </p>
+      <p class="closing-emotional">
+        <em><strong>No es solo un pañal. Es elegir cuidar cada detalle porque él ya hizo su parte.</strong></em>
+      </p>
+    </div>
+    
+    <button class="btn btn-primary btn-urgent btn-cta-final" data-cta="final-ver-packs" aria-label="Ver packs de pañales para prematuros y realizar compra">
+      <span>Ver Packs y Proteger Su Mañana</span>
+      <svg class="btn-arrow-lg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 12H19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    
+    <div class="valores-reminder">
+      <span class="valor-item">
+        <svg class="check-icon-inline" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M13.3333 4L6 11.3333L2.66667 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Ajuste real <strong>1.5-3kg</strong>
+      </span>
+      <span class="valor-item">
+        <svg class="check-icon-inline" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M13.3333 4L6 11.3333L2.66667 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <strong>Sin químicos</strong> agresivos
+      </span>
+      <span class="valor-item">
+        <svg class="check-icon-inline" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M13.3333 4L6 11.3333L2.66667 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Garantía <strong>30 días</strong>
+      </span>
+    </div>
+    
+    <div class="trust-badges">
+      <p class="trust-label">Apoyado por:</p>
+      <div class="badges-row">
+        <div class="trust-badge">
+          <img src="[PLACEHOLDER_LOGO_GOTS]" alt="Certificación GOTS Orgánico" width="auto" height="40" loading="lazy" />
+        </div>
+        <div class="trust-badge">
+          <span class="badge-text"><strong>Comercio Ético Verificado</strong></span>
+        </div>
+        <div class="trust-badge">
+          <span class="badge-text"><strong>+250 Familias</strong> Confían</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sticky CTA Mobile (activación condicional JS) -->
+<div class="cta-sticky-mobile" aria-hidden="true">
+  <button class="btn btn-primary btn-urgent" data-cta="sticky-mobile-cta" aria-label="Ver packs disponibles">
+    <span>Ver Packs Ahora</span>
+    <svg class="btn-arrow-sm" width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M4.16669 10H15.8334" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M10 4.16669L15.8333 10L10 15.8334" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  <button class="sticky-close" aria-label="Cerrar barra de acción">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path d="M12 4L4 12M4 4L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
+</div>
+  </footer>
+
+  <!-- BLOQUE 11: FOOTER -->
+  <footer id="footer" class="footer-section">
+    <!-- Contenido del footer se generará en Fase 1B -->
+	<div class="container">
+  <div class="footer-content">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <img src="[PLACEHOLDER_LOGO_URL]" alt="[PLACEHOLDER_NOMBRE_EMPRESA] Logo" width="120" height="auto" class="footer-logo" loading="lazy" />
+        <p class="footer-tagline">
+          Pañales de tela diseñados específicamente para bebés prematuros. Porque cada guerrero merece cuidado especial.
+        </p>
+        <div class="footer-social">
+          <a href="[PLACEHOLDER_FACEBOOK_URL]" class="social-link" aria-label="Síguenos en Facebook" target="_blank" rel="noopener">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="[PLACEHOLDER_INSTAGRAM_URL]" class="social-link" aria-label="Síguenos en Instagram" target="_blank" rel="noopener">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+              <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="[PLACEHOLDER_PINTEREST_URL]" class="social-link" aria-label="Síguenos en Pinterest" target="_blank" rel="noopener">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2C6.477 2 2 6.477 2 12C2 16.237 4.636 19.855 8.356 21.312C8.256 20.547 8.167 19.337 8.356 18.482L9.444 13.847C9.444 13.847 9.145 13.247 9.145 12.347C9.145 10.947 9.944 9.897 10.944 9.897C11.794 9.897 12.194 10.522 12.194 11.272C12.194 12.122 11.644 13.397 11.369 14.572C11.144 15.547 11.869 16.347 12.869 16.347C14.669 16.347 16.044 14.447 16.044 11.697C16.044 9.297 14.319 7.647 11.969 7.647C9.219 7.647 7.594 9.722 7.594 11.872C7.594 12.722 7.919 13.647 8.319 14.147C8.394 14.247 8.406 14.322 8.381 14.422L8.081 15.722C8.044 15.897 7.944 15.947 7.769 15.847C6.469 15.247 5.644 13.397 5.644 11.822C5.644 8.597 8.006 5.647 12.219 5.647C15.619 5.647 18.244 8.047 18.244 11.647C18.244 15.397 16.144 18.397 13.069 18.397C12.044 18.397 11.069 17.847 10.744 17.197L10.194 19.297C9.944 20.322 9.244 21.622 8.794 22.397C9.819 22.722 10.894 22.897 12.019 22.897C17.542 22.897 22.019 18.42 22.019 12.897C22.019 7.374 17.542 2.897 12.019 2.897L12 2Z" fill="currentColor"/>
+</svg>
+</a>
+</div>
+</div><div class="footer-col">
+    <h4 class="footer-title">Productos</h4>
+    <ul class="footer-links">
+      <li><a href="#packs">Packs de Pañales</a></li>
+      <li><a href="#absorbentes">Absorbentes Extra</a></li>
+      <li><a href="#accesorios">Accesorios</a></li>
+      <li><a href="#guia-tallas">Guía de Tallas</a></li>
+    </ul>
+  </div>
+  
+  <div class="footer-col">
+    <h4 class="footer-title">Información</h4>
+    <ul class="footer-links">
+      <li><a href="#como-usar">Cómo Usar</a></li>
+      <li><a href="#cuidado-lavado">Cuidado y Lavado</a></li>
+      <li><a href="#faq">Preguntas Frecuentes</a></li>
+      <li><a href="#testimonios">Testimonios</a></li>
+      <li><a href="#blog">Blog</a></li>
+    </ul>
+  </div>
+  
+  <div class="footer-col">
+    <h4 class="footer-title">Contacto</h4>
+    <ul class="footer-contact">
+      <li>
+        <svg class="contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M14.6667 11.28V13.28C14.6675 13.4657 14.6294 13.6494 14.555 13.8195C14.4807 13.9897 14.3716 14.1424 14.2348 14.2679C14.0979 14.3934 13.9364 14.489 13.7605 14.5485C13.5847 14.6079 13.3983 14.63 13.2133 14.6133C11.1619 14.3904 9.19137 13.6894 7.46 12.5667C5.84326 11.5431 4.48574 10.1856 3.46 8.56C2.33334 6.81854 1.63234 4.83635 1.41334 2.77333C1.39667 2.58901 1.41862 2.40334 1.4777 2.22787C1.53679 2.05239 1.63175 1.89132 1.75655 1.75475C1.88134 1.61817 2.03324 1.50909 2.20256 1.43455C2.37189 1.36 2.55493 1.32143 2.74 1.32H4.74C5.06353 1.31697 5.37717 1.42834 5.62248 1.63323C5.86779 1.83812 6.02804 2.12434 6.07334 2.44C6.15779 3.07001 6.31434 3.68874 6.54 4.28667C6.62974 4.53028 6.64908 4.79423 6.59591 5.04822C6.54274 5.30221 6.41928 5.53548 6.24 5.72L5.39334 6.56667C6.34241 8.24991 7.74343 9.65093 9.42667 10.6L10.2733 9.75333C10.4579 9.57406 10.6911 9.45059 10.9451 9.39742C11.1991 9.34425 11.4631 9.36359 11.7067 9.45333C12.3046 9.67899 12.9233 9.83554 13.5533 9.92C13.8729 9.96572 14.1617 10.1291 14.3673 10.3785C14.5729 10.628 14.6821 10.9458 14.6767 11.2733L14.6667 11.28Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <a href="tel:[PLACEHOLDER_TELEFONO]">[PLACEHOLDER_TELEFONO]</a>
+      </li>
+      <li>
+        <svg class="contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M2.66669 2.66669H13.3334C14.0667 2.66669 14.6667 3.26669 14.6667 4.00002V12C14.6667 12.7334 14.0667 13.3334 13.3334 13.3334H2.66669C1.93335 13.3334 1.33335 12.7334 1.33335 12V4.00002C1.33335 3.26669 1.93335 2.66669 2.66669 2.66669Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14.6667 4L8.00002 8.66667L1.33335 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <a href="mailto:[PLACEHOLDER_EMAIL]">[PLACEHOLDER_EMAIL]</a>
+      </li>
+      <li>
+        <svg class="contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M14 6.66669C14 11.3334 8 15.3334 8 15.3334C8 15.3334 2 11.3334 2 6.66669C2 5.07539 2.63214 3.54926 3.75736 2.42405C4.88258 1.29883 6.4087 0.666687 8 0.666687C9.5913 0.666687 11.1174 1.29883 12.2426 2.42405C13.3679 3.54926 14 5.07539 14 6.66669Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8 8.66669C9.10457 8.66669 10 7.77126 10 6.66669C10 5.56212 9.10457 4.66669 8 4.66669C6.89543 4.66669 6 5.56212 6 6.66669C6 7.77126 6.89543 8.66669 8 8.66669Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>[PLACEHOLDER_DIRECCION]</span>
+      </li>
+      <li>
+        <svg class="contact-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M8 4V8L10.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span>[PLACEHOLDER_HORARIOS]</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer-bottom">
+  <div class="footer-legal">
+    <p>&copy; 2025 [PLACEHOLDER_NOMBRE_EMPRESA]. Todos los derechos reservados.</p>
+    <ul class="legal-links">
+      <li><a href="#privacidad">Política de Privacidad</a></li>
+      <li><a href="#cookies">Cookies</a></li>
+      <li><a href="#terminos">Términos y Condiciones</a></li>
+      <li><a href="#devolucion">Devolución</a></li>
+    </ul>
+  </div>
+  
+  <div class="footer-certifications">
+    <span class="cert-badge">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M14.6667 7.38666V7.99999C14.6658 9.43762 14.2003 10.8365 13.3395 11.9879C12.4788 13.1393 11.2688 13.9817 9.89016 14.3893C8.51154 14.7969 7.03809 14.748 5.68957 14.2497C4.34104 13.7514 3.18975 12.8307 2.40729 11.6247C1.62482 10.4186 1.25317 8.99199 1.34776 7.55749C1.44235 6.12299 1.99812 4.75804 2.93217 3.66464C3.86621 2.57124 5.1285 1.80865 6.52974 1.49343C7.93098 1.17822 9.39619 1.32734 10.7067 1.91999" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14.6667 2.66666L8.00002 9.34L6.00002 7.34" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Certificado GOTS</span>
+    </span>
+    <span class="cert-badge">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M8 1.33334L10.06 5.50667L14.6667 6.18L11.3333 9.42667L12.12 14.0133L8 11.8467L3.88 14.0133L4.66667 9.42667L1.33334 6.18L5.94 5.50667L8 1.33334Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Comercio Justo</span>
+    </span>
+    <span class="cert-badge">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M8 14.6667C11.6819 14.6667 14.6667 11.6819 14.6667 8.00001C14.6667 4.31811 11.6819 1.33334 8 1.33334C4.3181 1.33334 1.33334 4.31811 1.33334 8.00001C1.33334 11.6819 4.3181 14.6667 8 14.6667Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M8 10.6667V8.00001" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M8 5.33334H8.00667" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Fabricación Ética</span>
+    </span>
+  </div>
+</div>
+
+<div class="footer-disclaimer">
+  <p>
+    <small>
+      Los pañales de tela requieren cuidado y lavado regular. Resultados individuales pueden variar. Consulta siempre con tu pediatra o neonatólogo antes de cambiar productos en contacto con la piel de tu bebé prematuro. Certificaciones y estudios disponibles bajo solicitud.
+    </small>
+  </p>
+</div>
+  </div>
+</div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="analytics.js" defer></script>
+  <script src="script.js" defer></script>
+  
+</body>
+</html>
